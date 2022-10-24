@@ -14,7 +14,7 @@ const getInfoByAsins = async () => {
         afternoonAsins = [],
         eveningAsins = [];
 
-    cron.schedule("0 40 15 * * *", async () => {
+    cron.schedule("10 0 5 * * *", async () => {
 
         morningArray = await data();
         let morningBans = morningArray.filter(array => array[2] == "Бан")
@@ -24,7 +24,7 @@ const getInfoByAsins = async () => {
         })
     })
 
-    cron.schedule("30 40 15 * * *", async () => {
+    cron.schedule("0 0 9 * * *", async () => {
         let bannedToday = 0;
 
         let today = new Date();
@@ -65,7 +65,7 @@ const getInfoByAsins = async () => {
         setData(string);
     })
 
-    cron.schedule("0 41 15 * * *", async () => {
+    cron.schedule("0 0 14 * * *", async () => {
         
         let today = new Date();
         let day = String(today.getDate()).padStart(2,'0');
@@ -106,6 +106,6 @@ const getInfoByAsins = async () => {
     })
 }
 
-cron.schedule("40 39 15 * * *", () => {
+cron.schedule("0 0 5 * * *", () => {
     getInfoByAsins();
 })
