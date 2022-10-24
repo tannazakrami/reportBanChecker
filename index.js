@@ -58,9 +58,6 @@ const getInfoByAsins = async () => {
             }
         })
 
-        console.log(`Afternoon Bans: ${bannedToday}`);
-        console.log(`Unbanned Asins: ${unbannedAsins}`);
-
         const string = [[today, time, bannedToday, unbannedAsins]];
         setData(string);
     })
@@ -100,7 +97,6 @@ const getInfoByAsins = async () => {
             }
         })
 
-        console.log(`Unbanned Asins: ${unbannedAsins}`);
         const string = [[today, time, bannedToday, unbannedAsins]];
         setData(string);
     })
